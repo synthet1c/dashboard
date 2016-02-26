@@ -1,0 +1,162 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>dashboard grid</title>
+	<link rel="stylesheet" href="css/jquery.gridster.min.css">
+	<link rel="stylesheet" href="css/analytics-dashboard-grid.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+	<script src="js/jquery.gridster.min.js"></script>
+	<script type="text/javascript" src="https://www.google.com/jsapi"></script>
+	<script src="js/analytics-dashboard-head.js"></script>
+</head>
+<body>
+	<main class="analytics-dashboard">
+		<section class="widget_ribbon">
+			<div class="widget_ribbon--inner">
+				<ul class="widget_ribbon--list" data-length="25">
+					<!-- content -->
+					<li class="widget_ribbon--item family-content" data-id="visitorsSummary" data-family="content">Visitors Summary</li>
+					<li class="widget_ribbon--item family-content" data-id="topPages" data-family="content">Top Pages</li>
+					<li class="widget_ribbon--item family-content" data-id="visitors" data-family="content">Visitors</li>
+					<li class="widget_ribbon--item family-content" data-id="referrals" data-family="content">referrals</li>
+					<li class="widget_ribbon--item family-content" data-id="socials" data-family="content">socials</li>
+					<li class="widget_ribbon--item family-content" data-id="keywords" data-family="content">keywords</li>
+					<li class="widget_ribbon--item family-content" data-id="devices" data-family="content">devices</li>
+					<!-- connections -->
+					<li class="widget_ribbon--item family-connections" data-id="connectionsSummary" data-family="connections">Connections Summary</li>
+					<li class="widget_ribbon--item family-connections" data-id="userEngagement" data-family="connections">User Engagement</li>
+					<li class="widget_ribbon--item family-connections" data-id="userByGender" data-family="connections">User By Gender</li>
+					<li class="widget_ribbon--item family-connections" data-id="userByAgeGroup" data-family="connections">User by Age Group</li>
+					<li class="widget_ribbon--item family-connections" data-id="registrationActivity" data-family="connections">Registration Activity</li>
+					<li class="widget_ribbon--item family-connections" data-id="pubuserGroups" data-family="connections">Pubuser Groups</li>
+					<li class="widget_ribbon--item family-connections" data-id="visitorsLocation" data-family="connections">Visitors Location</li>
+					<!-- interactions -->
+					<li class="widget_ribbon--item family-interactions" data-id="interactionSummary" data-family="interactions">Interactions Summary</li>
+					<li class="widget_ribbon--item family-interactions" data-id="recentBlogPosts" data-family="interactions">User Engagement</li>
+					<li class="widget_ribbon--item family-interactions" data-id="visitorsEngagement" data-family="interactions">Visitor Engagement</li>
+					<li class="widget_ribbon--item family-interactions" data-id="recentNewsletters" data-family="interactions">Recent Newsletters</li>
+					<li class="widget_ribbon--item family-interactions" data-id="visitorsLocationCity" data-family="interactions">Visitors Location City</li>
+					<li class="widget_ribbon--item family-interactions" data-id="socialReferrals" data-family="interactions">Social Referrals</li>
+					<li class="widget_ribbon--item family-interactions" data-id="socials" data-family="interactions">Socials</li>
+					<!-- transactions -->
+					<li class="widget_ribbon--item family-transactions" data-id="ecommerceSummary" data-family="transactions">ecommerce Summary</li>
+					<li class="widget_ribbon--item family-transactions" data-id="recentOrders" data-family="transactions">Recent Orders</li>
+					<li class="widget_ribbon--item family-transactions" data-id="bestSellers" data-family="transactions">Best Sellers</li>
+					<li class="widget_ribbon--item family-transactions" data-id="revenueByCategory" data-family="transactions">Revenue By Category</li>
+				</ul>
+			</div>
+		</section>
+		<section class="layout">
+			<div class="gridster content">
+
+				<ul class="panel">
+					<!-- <li class="panel__item" data-row="1" data-col="1" data-sizex="8" data-sizey="1"></li>
+					<li class="panel__item" data-row="2" data-col="1" data-sizex="8" data-sizey="3"></li>
+
+					<li class="panel__item" data-row="5" data-col="1" data-sizex="4" data-sizey="3"></li>
+					<li class="panel__item" data-row="5" data-col="5" data-sizex="4" data-sizey="3"></li>
+
+					<li class="panel__item" data-row="8" data-col="1" data-sizex="8" data-sizey="2"></li>
+
+					<li class="panel__item" data-row="1" data-col="9" data-sizex="3" data-sizey="7"></li>
+					<li class="panel__item" data-row="8" data-col="9" data-sizex="3" data-sizey="2"></li> -->
+
+				</ul>
+			</div>
+		</section>
+		<section class="charts">
+			<div id="chart_div"></div>
+		</section>
+	</main>
+	<article class="context_menu">
+		<section class="context_menu--inner">
+			<h3 class="context_menu--header">context menu</h3>
+			<ul class="context_menu__list">
+				<li class="context_menu__item remove">
+					<label class="icon-remove">remove widget</label>
+				</li>
+				<li class="context_menu__item add">
+					<label class="icon-add">add new widget</label>
+					<ul class="context_menu--sub-list">
+						<li class="context_menu--sub-item">
+							<label for="">content</label>
+							<ul class="context_menu--sub-sub-list">
+								<li class="context_menu--sub-sub--item" data-id="visitorsSummary" data-family="content">Visitors Summary</li>
+								<li class="context_menu--sub-sub--item" data-id="topPages" data-family="content">Top Pages</li>
+								<li class="context_menu--sub-sub--item" data-id="visitors" data-family="content">Visitors</li>
+								<li class="context_menu--sub-sub--item" data-id="referrals" data-family="content">referrals</li>
+								<li class="context_menu--sub-sub--item" data-id="socials" data-family="content">socials</li>
+								<li class="context_menu--sub-sub--item" data-id="keywords" data-family="content">keywords</li>
+								<li class="context_menu--sub-sub--item" data-id="devices" data-family="content">devices</li>
+							</ul>
+						</li>
+						<li class="context_menu--sub-item">
+							<label for="">connections</label>
+							<ul class="context_menu--sub-sub-list">
+								<li class="context_menu--sub-sub--item" data-id="connectionsSummary" data-family="connections">Connections Summary</li>
+								<li class="context_menu--sub-sub--item" data-id="userEngagement" data-family="connections">User Engagement</li>
+								<li class="context_menu--sub-sub--item" data-id="userByGender" data-family="connections">User By Gender</li>
+								<li class="context_menu--sub-sub--item" data-id="userByAgeGroup" data-family="connections">User by Age Group</li>
+								<li class="context_menu--sub-sub--item" data-id="registrationActivity" data-family="connections">Registration Activity</li>
+								<li class="context_menu--sub-sub--item" data-id="pubuserGroups" data-family="connections">Pubuser Groups</li>
+								<li class="context_menu--sub-sub--item" data-id="visitorsLocation" data-family="connections">Visitors Location</li>
+							</ul>
+						</li>
+						<li class="context_menu--sub-item">
+							<label for="">interactions</label>
+							<ul class="context_menu--sub-sub-list">
+								<li class="context_menu--sub-sub--item" data-id="interactionSummary" data-family="interactions">Interactions Summary</li>
+								<li class="context_menu--sub-sub--item" data-id="recentBlogPosts" data-family="interactions">User Engagement</li>
+								<li class="context_menu--sub-sub--item" data-id="visitorsEngagement" data-family="interactions">Visitor Engagement</li>
+								<li class="context_menu--sub-sub--item" data-id="recentNewsletters" data-family="interactions">Recent Newsletters</li>
+								<li class="context_menu--sub-sub--item" data-id="visitorsLocationCity" data-family="interactions">Visitors Location City</li>
+								<li class="context_menu--sub-sub--item" data-id="socialReferrals" data-family="interactions">Social Referrals</li>
+								<li class="context_menu--sub-sub--item" data-id="socials" data-family="interactions">Socials</li>
+							</ul>
+						</li>
+						<li class="context_menu--sub-item">
+							<label for="">transactions</label>
+							<ul class="context_menu--sub-sub-list">
+								<li class="context_menu--sub-sub--item" data-id="ecommerceSummary" data-family="transactions">ecommerce Summary</li>
+								<li class="context_menu--sub-sub--item" data-id="recentOrders" data-family="transactions">Recent Orders</li>
+								<li class="context_menu--sub-sub--item" data-id="bestSellers" data-family="transactions">Best Sellers</li>
+								<li class="context_menu--sub-sub--item" data-id="revenueByCategory" data-family="transactions">Revenue By Category</li>
+							</ul>
+						</li>
+					</ul>
+				</li>
+				<li class="context_menu__item save">
+					<label class="icon-save" id="icon">save</label>
+				</li>
+			</ul>
+		</section>
+	</article>
+	<script type="text/x-template" id="panel__content--template--bar">
+		<li class="panel__item chart__bar family-{{family}}" data-gadata='[["Galaxy","Distance","Brightness"],["Canis Major Dwarf",8000,23.3],["Sagittarius Dwarf",24000,4.5],["Ursa Major II Dwarf",30000,14.3],["Lg. Magellanic Cloud",50000,0.9],["Bootes I",60000,13.1]]'>
+			<div class="panel__inner">
+				<div class="panel__heading">
+					<h3 class="widget-name">{{heading}}</h3>
+				</div>
+				<div class="panel__content">
+					<div id="{{id}}"></div>
+				</div>
+			</div>
+		</li>
+	</script>
+
+	<script type="text/x-template" id="panel__content--template--pie">
+		<li class="panel__item chart__pie family-{{family}}" data-gadata='[["Task","Hours per Day"],["Work",11],["Eat",2],["Commute",2],["Watch TV",2],["Sleep",7]]'>
+			<div class="panel__inner">
+				<div class="panel__heading">
+					<h3 class="widget-name">{{heading}}</h3>
+				</div>
+				<div class="panel__content">
+					<div id="{{id}}"></div>
+				</div>
+			</div>
+		</li>
+	</script>
+	<script src="js/analytics-dashboard-grid.js"></script>
+</body>
+</html>

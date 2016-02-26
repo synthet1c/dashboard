@@ -1,0 +1,802 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<meta name="viewport" content="initial-scale=1">
+</head>
+<style>
+
+	ul {
+		padding: 0;
+		margin: 0;
+		list-style-type : none;
+	}
+
+	.panel__item {
+		background: red;
+		position :absolute;
+		overflow: hidden;
+	}
+
+	[data-col="1"] {
+		left : 0.69444%;
+	}
+
+	[data-col="2"] {
+		left : 8.02778%;
+	}
+
+	[data-col="3"] {
+		left : 15.36111%;
+	}
+
+	[data-col="4"] {
+		left : 22.69444%;
+	}
+
+	[data-col="5"] {
+		left : 30.02778%;
+	}
+
+	[data-col="6"] {
+		left : 37.36111%;
+	}
+
+	[data-col="7"] {
+		left : 44.69444%;
+	}
+
+	[data-col="8"] {
+		left : 52.02778%;
+	}
+
+	[data-col="9"] {
+		left : 59.36111%;
+	}
+
+	[data-col="10"] {
+		left : 66.69444%;
+	}
+
+	[data-col="11"] {
+		left : 74.02778%;
+	}
+
+	[data-col="12"] {
+		left : 81.36111%;
+	}
+
+	[data-col="13"] {
+		left : 88.69444%;
+	}
+
+	[data-row="1"] {
+		top : 0.69444%;
+	}
+
+	[data-row="2"] {
+		top : 8.02778%;
+	}
+
+	[data-row="3"] {
+		top : 15.36111%;
+	}
+
+	[data-row="4"] {
+		top : 22.69444%;
+	}
+
+	[data-row="5"] {
+		top : 30.02778%;
+	}
+
+	[data-row="6"] {
+		top : 37.36111%;
+	}
+
+	[data-row="7"] {
+		top : 44.69444%;
+	}
+
+	[data-row="8"] {
+		top : 52.02778%;
+	}
+
+	[data-row="9"] {
+		top : 59.36111%;
+	}
+
+	[data-row="10"] {
+		top : 66.69444%;
+	}
+
+	[data-row="11"] {
+		top : 74.02778%;
+	}
+
+	[data-row="12"] {
+		top : 81.36111%;
+	}
+
+	[data-row="13"] {
+		top : 88.69444%;
+	}
+
+	[data-row="14"] {
+		top : 96.02778%;
+	}
+
+	[data-row="15"] {
+		top : 103.36111%;
+	}
+
+	[data-row="16"] {
+		top : 110.69444%;
+	}
+
+	[data-row="17"] {
+		top : 118.02778%;
+	}
+
+	[data-row="18"] {
+		top : 125.36111%;
+	}
+
+	[data-row="19"] {
+		top : 132.69444%;
+	}
+
+	[data-row="20"] {
+		top : 140.02778%;
+	}
+
+	[data-row="21"] {
+		top : 147.36111%;
+	}
+
+	[data-row="22"] {
+		top : 154.69444%;
+	}
+
+	[data-row="23"] {
+		top : 162.02778%;
+	}
+
+	[data-row="24"] {
+		top : 169.36111%;
+	}
+
+	[data-row="25"] {
+		top : 176.69444%;
+	}
+
+	[data-row="26"] {
+		top : 184.02778%;
+	}
+
+	[data-row="27"] {
+		top : 191.36111%;
+	}
+
+	[data-row="28"] {
+		top : 198.69444%;
+	}
+
+	[data-row="29"] {
+		top : 206.02778%;
+	}
+
+	[data-row="30"] {
+		top : 213.36111%;
+	}
+
+	[data-row="31"] {
+		top : 220.69444%;
+	}
+
+	[data-row="32"] {
+		top : 228.02778%;
+	}
+
+	[data-row="33"] {
+		top : 235.36111%;
+	}
+
+	[data-sizex="0"] {
+		width : -0.80556%;
+	}
+
+	[data-sizex="1"] {
+		width : 6.52778%;
+	}
+
+	[data-sizex="2"] {
+		width : 13.86111%;
+	}
+
+	[data-sizex="3"] {
+		width : 21.19444%;
+	}
+
+	[data-sizex="4"] {
+		width : 28.52778%;
+	}
+
+	[data-sizex="5"] {
+		width : 35.86111%;
+	}
+
+	[data-sizex="6"] {
+		width : 43.19444%;
+	}
+
+	[data-sizex="7"] {
+		width : 50.52778%;
+	}
+
+	[data-sizex="8"] {
+		width : 57.86111%;
+	}
+
+	[data-sizex="9"] {
+		width : 65.19444%;
+	}
+
+	[data-sizex="10"] {
+		width : 72.52778%;
+	}
+
+	[data-sizex="11"] {
+		width : 79.86111%;
+	}
+
+	[data-sizex="12"] {
+		width : 87.19444%;
+	}
+
+	[data-sizey="0"] {
+		height : -1.30556%;
+	}
+
+	[data-sizey="1"] {
+		height : 6.02778%;
+	}
+
+	[data-sizey="2"] {
+		height : 13.36111%;
+	}
+
+	[data-sizey="3"] {
+		height : 20.69444%;
+	}
+
+	[data-sizey="4"] {
+		height : 28.02778%;
+	}
+
+	[data-sizey="5"] {
+		height : 35.36111%;
+	}
+
+	[data-sizey="6"] {
+		height : 42.69444%;
+	}
+
+	[data-sizey="7"] {
+		height : 50.02778%;
+	}
+
+	[data-sizey="8"] {
+		height : 57.36111%;
+	}
+
+	[data-sizey="9"] {
+		height : 64.69444%;
+	}
+
+	[data-sizey="10"] {
+		height : 72.02778%;
+	}
+
+	[data-sizey="11"] {
+		height : 79.36111%;
+	}
+
+	[data-sizey="12"] {
+		height : 86.69444%;
+	}
+
+	[data-sizey="13"] {
+		height : 94.02778%;
+	}
+
+	[data-sizey="14"] {
+		height : 101.36111%;
+	}
+
+	[data-sizey="15"] {
+		height : 108.69444%;
+	}
+
+	[data-sizey="16"] {
+		height : 116.02778%;
+	}
+
+	[data-sizey="17"] {
+		height : 123.36111%;
+	}
+
+	[data-sizey="18"] {
+		height : 130.69444%;
+	}
+
+	[data-sizey="19"] {
+		height : 138.02778%;
+	}
+
+	[data-sizey="20"] {
+		height : 145.36111%;
+	}
+
+	[data-sizey="21"] {
+		height : 152.69444%;
+	}
+
+	[data-sizey="22"] {
+		height : 160.02778%;
+	}
+
+	[data-sizey="23"] {
+		height : 167.36111%;
+	}
+
+	[data-sizey="24"] {
+		height : 174.69444%;
+	}
+
+	[data-sizey="25"] {
+		height : 182.02778%;
+	}
+
+	[data-sizey="26"] {
+		height : 189.36111%;
+	}
+
+	[data-sizey="27"] {
+		height : 196.69444%;
+	}
+
+	[data-sizey="28"] {
+		height : 204.02778%;
+	}
+
+	[data-sizey="29"] {
+		height : 211.36111%;
+	}
+
+	[data-sizey="30"] {
+		height : 218.69444%;
+	}
+
+	[data-sizey="31"] {
+		height : 226.02778%;
+	}
+
+	[data-sizey="32"] {
+		height : 233.36111%;
+	}
+
+	@media screen and (max-width: 600px){
+		.panel__item,
+		[data-sizex],
+		[data-sizey],
+		[data-col],
+		[data-row] {
+			position: relative;
+			float: left;
+			width: 100%;
+			height: 100%;
+			left: auto;
+			top: auto;
+			margin: .3em;
+			padding :1em;
+		}
+	}
+</style>
+<body>
+
+<main>
+	<section class="layout">
+		<div class="gridster content ready" >
+
+			<ul class="panel" >
+				<li class="panel__item family-content gs-w" data-col="1" data-row="9" data-sizex="4" data-sizey="6"  data-widget-size="small">
+					<div class="panel__inner">
+						<div class="panel__heading"><h3 class="widget-name">Visitors</h3></div>
+						<div class="panel__content">
+							<table class="table-responsive" border="0">
+								<thead>
+								<tr>
+									<th>lorem</th>
+									<th>ipsum</th>
+									<th>sit</th>
+								</tr>
+								</thead>
+								<tbody>
+								<tr>
+									<td data-heading="lorem">1</td>
+									<td data-heading="ipsum">2</td>
+									<td data-heading="dolar">3</td>
+								</tr>
+								<tr>
+									<td data-heading="lorem">4</td>
+									<td data-heading="ipsum">5</td>
+									<td data-heading="dolar">6</td>
+								</tr>
+								<tr>
+									<td data-heading="lorem">7</td>
+									<td data-heading="ipsum">8</td>
+									<td data-heading="dolar">9</td>
+								</tr>
+								<tr>
+									<td data-heading="lorem">1</td>
+									<td data-heading="ipsum">2</td>
+									<td data-heading="dolar">3</td>
+								</tr>
+								</tbody>
+							</table>
+						</div>
+					</div>
+					<span class="gs-resize-handle gs-resize-handle-both"></span></li>
+				<li class="panel__item family-content gs-w player-revert" data-col="5" data-row="22" data-sizex="4" data-sizey="8" data-widget-size="small">
+					<div class="panel__inner">
+						<div class="panel__heading"><h3 class="widget-name">Devices</h3></div>
+						<div class="panel__content">
+							<table class="table-responsive" border="0">
+								<thead>
+								<tr>
+									<th>lorem</th>
+									<th>ipsum</th>
+									<th>sit</th>
+								</tr>
+								</thead>
+								<tbody>
+								<tr>
+									<td data-heading="lorem">1</td>
+									<td data-heading="ipsum">2</td>
+									<td data-heading="dolar">3</td>
+								</tr>
+								<tr>
+									<td data-heading="lorem">4</td>
+									<td data-heading="ipsum">5</td>
+									<td data-heading="dolar">6</td>
+								</tr>
+								<tr>
+									<td data-heading="lorem">7</td>
+									<td data-heading="ipsum">8</td>
+									<td data-heading="dolar">9</td>
+								</tr>
+								<tr>
+									<td data-heading="lorem">1</td>
+									<td data-heading="ipsum">2</td>
+									<td data-heading="dolar">3</td>
+								</tr>
+								</tbody>
+							</table>
+						</div>
+					</div>
+					<span class="gs-resize-handle gs-resize-handle-both"></span></li>
+				<li class="panel__item family-content gs-w" data-col="9" data-row="1" data-sizex="4" data-sizey="4" >
+					<div class="panel__inner">
+						<div class="panel__heading"><h3 class="widget-name">Keywords</h3></div>
+						<div class="panel__content">
+							<table class="table-responsive" border="0">
+								<thead>
+								<tr>
+									<th>lorem</th>
+									<th>ipsum</th>
+									<th>sit</th>
+								</tr>
+								</thead>
+								<tbody>
+								<tr>
+									<td data-heading="lorem">1</td>
+									<td data-heading="ipsum">2</td>
+									<td data-heading="dolar">3</td>
+								</tr>
+								<tr>
+									<td data-heading="lorem">4</td>
+									<td data-heading="ipsum">5</td>
+									<td data-heading="dolar">6</td>
+								</tr>
+								<tr>
+									<td data-heading="lorem">7</td>
+									<td data-heading="ipsum">8</td>
+									<td data-heading="dolar">9</td>
+								</tr>
+								<tr>
+									<td data-heading="lorem">1</td>
+									<td data-heading="ipsum">2</td>
+									<td data-heading="dolar">3</td>
+								</tr>
+								</tbody>
+							</table>
+						</div>
+					</div>
+					<span class="gs-resize-handle gs-resize-handle-both"></span></li>
+				<li class="panel__item family-connections gs-w" data-col="5" data-row="5" data-sizex="8" data-sizey="5"  data-widget-size="medium">
+					<div class="panel__inner">
+						<div class="panel__heading"><h3 class="widget-name">Connections Summary</h3></div>
+						<div class="panel__content">
+							<table class="table-responsive" border="0">
+								<thead>
+								<tr>
+									<th>lorem</th>
+									<th>ipsum</th>
+									<th>sit</th>
+								</tr>
+								</thead>
+								<tbody>
+								<tr>
+									<td data-heading="lorem">1</td>
+									<td data-heading="ipsum">2</td>
+									<td data-heading="dolar">3</td>
+								</tr>
+								<tr>
+									<td data-heading="lorem">4</td>
+									<td data-heading="ipsum">5</td>
+									<td data-heading="dolar">6</td>
+								</tr>
+								<tr>
+									<td data-heading="lorem">7</td>
+									<td data-heading="ipsum">8</td>
+									<td data-heading="dolar">9</td>
+								</tr>
+								<tr>
+									<td data-heading="lorem">1</td>
+									<td data-heading="ipsum">2</td>
+									<td data-heading="dolar">3</td>
+								</tr>
+								</tbody>
+							</table>
+						</div>
+					</div>
+					<span class="gs-resize-handle gs-resize-handle-both"></span></li>
+				<li class="panel__item family-connections gs-w" data-col="5" data-row="10" data-sizex="4" data-sizey="5"  data-widget-size="small">
+					<div class="panel__inner">
+						<div class="panel__heading"><h3 class="widget-name">Users Engagement</h3></div>
+						<div class="panel__content">
+							<table class="table-responsive" border="0">
+								<thead>
+								<tr>
+									<th>lorem</th>
+									<th>ipsum</th>
+									<th>sit</th>
+								</tr>
+								</thead>
+								<tbody>
+								<tr>
+									<td data-heading="lorem">1</td>
+									<td data-heading="ipsum">2</td>
+									<td data-heading="dolar">3</td>
+								</tr>
+								<tr>
+									<td data-heading="lorem">4</td>
+									<td data-heading="ipsum">5</td>
+									<td data-heading="dolar">6</td>
+								</tr>
+								<tr>
+									<td data-heading="lorem">7</td>
+									<td data-heading="ipsum">8</td>
+									<td data-heading="dolar">9</td>
+								</tr>
+								<tr>
+									<td data-heading="lorem">1</td>
+									<td data-heading="ipsum">2</td>
+									<td data-heading="dolar">3</td>
+								</tr>
+								</tbody>
+							</table>
+						</div>
+					</div>
+					<span class="gs-resize-handle gs-resize-handle-both"></span></li>
+				<li class="panel__item family-content gs-w" data-col="9" data-row="10" data-sizex="4" data-sizey="5"  data-widget-size="small">
+					<div class="panel__inner">
+						<div class="panel__heading"><h3 class="widget-name">Socials</h3></div>
+						<div class="panel__content">
+							<table class="table-responsive" border="0">
+								<thead>
+								<tr>
+									<th>lorem</th>
+									<th>ipsum</th>
+									<th>sit</th>
+								</tr>
+								</thead>
+								<tbody>
+								<tr>
+									<td data-heading="lorem">1</td>
+									<td data-heading="ipsum">2</td>
+									<td data-heading="dolar">3</td>
+								</tr>
+								<tr>
+									<td data-heading="lorem">4</td>
+									<td data-heading="ipsum">5</td>
+									<td data-heading="dolar">6</td>
+								</tr>
+								<tr>
+									<td data-heading="lorem">7</td>
+									<td data-heading="ipsum">8</td>
+									<td data-heading="dolar">9</td>
+								</tr>
+								<tr>
+									<td data-heading="lorem">1</td>
+									<td data-heading="ipsum">2</td>
+									<td data-heading="dolar">3</td>
+								</tr>
+								</tbody>
+							</table>
+						</div>
+					</div>
+					<span class="gs-resize-handle gs-resize-handle-both"></span></li>
+				<li class="panel__item family-interactions gs-w" data-col="1" data-row="1" data-sizex="4" data-sizey="8"  data-widget-size="medium">
+					<div class="panel__inner">
+						<div class="panel__heading"><h3 class="widget-name">Visitors Engagement</h3></div>
+						<div class="panel__content">
+							<table class="table-responsive" border="0">
+								<thead>
+								<tr>
+									<th>lorem</th>
+									<th>ipsum</th>
+									<th>sit</th>
+								</tr>
+								</thead>
+								<tbody>
+								<tr>
+									<td data-heading="lorem">1</td>
+									<td data-heading="ipsum">2</td>
+									<td data-heading="dolar">3</td>
+								</tr>
+								<tr>
+									<td data-heading="lorem">4</td>
+									<td data-heading="ipsum">5</td>
+									<td data-heading="dolar">6</td>
+								</tr>
+								<tr>
+									<td data-heading="lorem">7</td>
+									<td data-heading="ipsum">8</td>
+									<td data-heading="dolar">9</td>
+								</tr>
+								<tr>
+									<td data-heading="lorem">1</td>
+									<td data-heading="ipsum">2</td>
+									<td data-heading="dolar">3</td>
+								</tr>
+								</tbody>
+							</table>
+						</div>
+					</div>
+					<span class="gs-resize-handle gs-resize-handle-both"></span></li>
+				<li class="panel__item family-interactions gs-w" data-col="5" data-row="1" data-sizex="4" data-sizey="4" >
+					<div class="panel__inner">
+						<div class="panel__heading"><h3 class="widget-name">Visitors Location City</h3></div>
+						<div class="panel__content">
+							<table class="table-responsive" border="0">
+								<thead>
+								<tr>
+									<th>lorem</th>
+									<th>ipsum</th>
+									<th>sit</th>
+								</tr>
+								</thead>
+								<tbody>
+								<tr>
+									<td data-heading="lorem">1</td>
+									<td data-heading="ipsum">2</td>
+									<td data-heading="dolar">3</td>
+								</tr>
+								<tr>
+									<td data-heading="lorem">4</td>
+									<td data-heading="ipsum">5</td>
+									<td data-heading="dolar">6</td>
+								</tr>
+								<tr>
+									<td data-heading="lorem">7</td>
+									<td data-heading="ipsum">8</td>
+									<td data-heading="dolar">9</td>
+								</tr>
+								<tr>
+									<td data-heading="lorem">1</td>
+									<td data-heading="ipsum">2</td>
+									<td data-heading="dolar">3</td>
+								</tr>
+								</tbody>
+							</table>
+						</div>
+					</div>
+					<span class="gs-resize-handle gs-resize-handle-both"></span></li>
+				<li class="panel__item family-interactions gs-w" data-col="1" data-row="15" data-sizex="12" data-sizey="7"  data-widget-size="large">
+					<div class="panel__inner">
+						<div class="panel__heading"><h3 class="widget-name">Interaction Summary</h3></div>
+						<div class="panel__content">
+							<table class="table-responsive" border="0">
+								<thead>
+								<tr>
+									<th>lorem</th>
+									<th>ipsum</th>
+									<th>sit</th>
+								</tr>
+								</thead>
+								<tbody>
+								<tr>
+									<td data-heading="lorem">1</td>
+									<td data-heading="ipsum">2</td>
+									<td data-heading="dolar">3</td>
+								</tr>
+								<tr>
+									<td data-heading="lorem">4</td>
+									<td data-heading="ipsum">5</td>
+									<td data-heading="dolar">6</td>
+								</tr>
+								<tr>
+									<td data-heading="lorem">7</td>
+									<td data-heading="ipsum">8</td>
+									<td data-heading="dolar">9</td>
+								</tr>
+								<tr>
+									<td data-heading="lorem">1</td>
+									<td data-heading="ipsum">2</td>
+									<td data-heading="dolar">3</td>
+								</tr>
+								</tbody>
+							</table>
+						</div>
+					</div>
+					<span class="gs-resize-handle gs-resize-handle-both"></span></li>
+				<li class="panel__item family-interactions gs-w" data-col="1" data-row="22" data-sizex="4" data-sizey="4" >
+					<div class="panel__inner">
+						<div class="panel__heading"><h3 class="widget-name">Recent Blog Posts</h3></div>
+						<div class="panel__content">
+							<table class="table-responsive" border="0">
+								<thead>
+								<tr>
+									<th>lorem</th>
+									<th>ipsum</th>
+									<th>sit</th>
+								</tr>
+								</thead>
+								<tbody>
+								<tr>
+									<td data-heading="lorem">1</td>
+									<td data-heading="ipsum">2</td>
+									<td data-heading="dolar">3</td>
+								</tr>
+								<tr>
+									<td data-heading="lorem">4</td>
+									<td data-heading="ipsum">5</td>
+									<td data-heading="dolar">6</td>
+								</tr>
+								<tr>
+									<td data-heading="lorem">7</td>
+									<td data-heading="ipsum">8</td>
+									<td data-heading="dolar">9</td>
+								</tr>
+								<tr>
+									<td data-heading="lorem">1</td>
+									<td data-heading="ipsum">2</td>
+									<td data-heading="dolar">3</td>
+								</tr>
+								</tbody>
+							</table>
+						</div>
+					</div>
+					<span class="gs-resize-handle gs-resize-handle-both"></span></li>
+			</ul>
+		</div>
+	</section>
+	<section class="charts">
+		<div id="chart_div"></div>
+	</section>
+</main>
+</body>
+</html>

@@ -1,0 +1,45 @@
+$horizontal-max: 12;
+$vertical-max: 12;
+$twelth: 100 / 12 / 12;
+$available-width: 88%; // width minus total margin
+
+	@for $ii from 0 through 12 {
+		[data-col="#{$ii+1}"] {
+			left : ($ii * ($available-width / 12) + $twelth);
+		}
+	}
+
+	@for $ii from 0 through 32 {
+		[data-row="#{$ii+1}"] {
+			top : ($ii * ($available-width / 12) + $twelth);
+		}
+	}
+
+	@for $ii from 0 through 12 {
+		[data-sizex="#{$ii}"] {
+			width : ($ii * ($available-width / 12) + $twelth - 1.5);
+		}
+	}
+
+	@for $ii from 0 through 32 {
+		[data-sizey="#{$ii}"] {
+			height : ($ii * ($available-width / 12) + $twelth - 2);
+		}
+	}
+
+	@media (max-width : 640px) {
+		[data-sizex],
+		[data-sizey],
+		[data-col],
+		[data-row] {
+			position : relative;
+			float    : left;
+			width    : 100%;
+			height   : 100%;
+			left     : auto;
+			top      : auto;
+			margin   : .3em;
+			padding  : 1em;
+		}
+	}
+

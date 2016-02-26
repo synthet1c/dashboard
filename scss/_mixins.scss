@@ -1,0 +1,110 @@
+@mixin absolute-full {
+	position : absolute;
+	top      : 0;
+	left     : 0;
+	right    : 0;
+	bottom   : 0;
+}
+
+@mixin clear {
+	&:before, &:after {
+		content : " ";
+		display : table;
+		clear   : both;
+	}
+}
+
+@mixin aspect-ratio($width, $height) {
+	position : relative;
+	&:before {
+		display     : block;
+		content     : "";
+		width       : 100%;
+		padding-top : ($height / $width) * 100%;
+		background  : red;
+	}
+	> * {
+		position : absolute;
+		top      : 0;
+		left     : 0;
+		right    : 0;
+		bottom   : 0;
+	}
+}
+
+@mixin inherit-family-color {
+
+	background : $family-admin;
+
+	.family-content & {
+		background : $family-content;
+	}
+
+	.family-connections & {
+		background : $family-connections;
+	}
+
+	.family-interactions & {
+		background : $family-interactions;
+	}
+
+	.family-transactions & {
+		background : $family-transactions;
+	}
+}
+
+@mixin responsive-widget( $size: 'small' ){
+	$sizes: (small: 4, medium: 8, large: 12);
+	$end: map-get($sizes, $size);
+	/* placeholder class to extend */
+	&%-#{$size} {
+		@content;
+	}
+	@for $ii from ($end - 3) to ($end + 1) {
+		&[data-sizex="#{$ii}"] {
+			@extend %-#{$size};
+		}
+	}
+}
+
+@mixin responsive-table($background: #3cf) {
+	@content;
+
+	thead {
+		display: none;
+	}
+
+	* {
+		display: block;
+	}
+
+	width : 100%;
+
+	tr:before, tr:after {
+		content: " ";
+		display: table;
+		clear: both;
+	}
+
+	tr:nth-of-type(odd) {
+		background : $background;
+	}
+
+	td {
+		width: 100%;
+		display: block;
+		text-align: right;
+		float: right;
+	}
+	td:before {
+		display: inline-block;
+		text-align: left;
+		float: left;
+	}
+
+	@for $ii from 1 to 12 {
+		td:nth-of-type(#{$ii}):before {
+			content : attr(data-heading);
+		}
+	}
+}

@@ -1,0 +1,73 @@
+@keyframes hide-ribbon-widget {
+	0% {
+		visibility: visible;
+		opacity: 1;
+	}
+	99% {
+		opacity: 0;
+	}
+	100% {
+		visibility: hidden;
+		position: absolute;
+	}
+}
+
+.widget_ribbon {
+
+	&--inner {
+		width: 100%;
+		overflow-x: auto;
+		overflow-y: hidden;
+		padding: 10px;
+	}
+
+	&--list {
+		@include clear;
+		padding : 0;
+		margin  : 0;
+		/* set the width based on the amount of children*/
+		@for $ii from 1 through 32 {
+			&[data-length='#{$ii}']{
+				width: $ii * 220px;
+				min-width: 100%;
+				.widget_ribbon--item {
+					width: 200px;
+				}
+			}
+		}
+	}
+
+	&--item {
+		height: 100px;
+		margin-left: 10px;
+		background: $color-primary;
+		float: left;
+
+		&.hide {
+			animation: hide-ribbon-widget;
+			animation-duration: 1s;
+			animation-iteration-count: 1;
+			animation-direction: forwards;
+			animation-fill-mode : forwards
+		}
+
+		&.family-content {
+			background: $family-content;
+		}
+
+		&.family-connections {
+			background: $family-connections;
+		}
+
+		&.family-interactions {
+			background: $family-interactions;
+		}
+
+		&.family-transactions {
+			background: $family-transactions;
+		}
+	}
+
+
+
+}

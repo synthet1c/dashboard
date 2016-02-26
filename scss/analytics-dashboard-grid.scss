@@ -1,0 +1,238 @@
+$red: #ff0057;
+$color-primary: $red;
+$family-admin: $red;
+$family-content: #3cf;
+$family-connections: #fa5000;
+$family-interactions: #e1059b;
+$family-transactions: #81be0a;
+
+@import 'grid';
+@import 'mixins';
+@import 'font-awesome';
+@import 'ribbon';
+
+html, body {
+	@include absolute-full;
+	font-family :sans-serif;
+	color: rgba(30,30,30,.87);
+}
+
+ul {
+	list-style-type : none;
+}
+
+	.layout {
+		width    : 1000px;
+		height   : 565px;
+		position : relative;
+	}
+
+	.gridster {
+		width : 100%;
+		@include absolute-full;
+	}
+
+	.panel {
+		@include absolute-full;
+		padding : 0;
+		margin  : 0;
+
+		&__item {
+			// background : $color-primary;
+			// color      : white;
+			background : #fafafa;
+			overflow   : hidden;
+
+			@include responsive-widget('small') {
+				.table-responsive {
+					@include responsive-table(darken(#fafafa, 5%));
+				}
+			}
+
+			@include responsive-widget('medium') {
+				.table-responsive {
+
+					th {
+						border-bottom : 1px solid #aaaaaa;
+					}
+				}
+			}
+		}
+
+		&__heading {
+
+			@include inherit-family-color;
+			color      : #ffffff;
+			background : $color-primary;
+			position   : absolute;
+			top        : 0;
+			left       : 0;
+			right      : 0;
+			height     : 2em;
+
+			h3 {
+				font-size : 16px;
+				padding   : .5em 0;
+				margin    : 0;
+			}
+		}
+
+		&__content {
+			position : absolute;
+			top      : 2em;
+			left     : 0;
+			bottom   : 0;
+			right    : 0;
+			overflow : auto;
+
+			.table-responsive {
+				width : 100%;
+			}
+		}
+	}
+
+	.context_menu {
+		visibility : hidden;
+		@include absolute-full;
+		position: fixed;
+		z-index    : 9998;
+		opacity    : 0;
+
+		&--inner {
+			// background: green;
+			position   : absolute;
+			box-shadow : 0 0 1em rgba(20, 20, 20, .8);
+			background : #ffffff;
+		}
+
+		&--header {
+			padding    : .5em;
+			margin     : 0;
+			text-align : center;
+			background : $color-primary;
+			color      : #ffffff;
+
+			h3 {
+				padding : 0;
+				margin  : 0;
+			}
+		}
+
+		&__list {
+			margin  : 0;
+			padding : 0;
+			@include clear;
+		}
+
+		&__item {
+			padding : .5em 2em;
+			cursor  : pointer;
+			@include clear;
+			&:hover {
+				background : darken(#efefef, 10%);
+
+				.context_menu--sub-list {
+					display : block;
+					@include clear;
+
+					.context_menu--sub-item:hover {
+						background : darken(#efefef, 10%);
+						.context_menu--sub-sub-list {
+							display : block;
+						}
+					}
+				}
+			}
+
+			label {
+				float : left;
+			}
+		}
+
+		&--sub-list {
+			position   : absolute;
+			@include clear;
+			left       : 100%;
+			display    : none;
+			background : #ffffff;
+			padding    : 0;
+			margin     : 0;
+
+			li {
+				padding  : .4em;
+				@include clear;
+				position : relative;
+			}
+		}
+
+		&--sub-sub-list {
+			position   : absolute;
+			@include clear;
+			left       : 100%;
+			display    : none;
+			background : #ffffff;
+			padding    : 0;
+			margin     : 0;
+
+			li {
+				@include clear;
+				padding  : .4em;
+				position : relative;
+			}
+		}
+	}
+
+	.tabs {
+		display : none;
+		@include absolute-full;
+		z-index : 9998;
+
+		&--inner {
+			position   : absolute;
+			height     : 400px;
+			width      : 1000px;
+			top        : 50%;
+			left       : 50%;
+			transform  : translate(-50%, -50%);
+			background : #cccccc;
+		}
+
+		&__navigation {
+			width : 30%;
+			float : left;
+		}
+
+		&__navigation--list {
+			@include clear;
+			margin  : 0;
+			padding : 0;
+		}
+
+		&__navigation--item {
+			width      : 100%;
+			background : $color-primary;
+			color      : #ffffff;
+		}
+
+		&__content {
+			width : 60%;
+			float : left;
+		}
+	}
+
+	.widget-name {
+		text-align : center;
+	}
+
+	body.show--context-menu .context_menu {
+		visibility : visible;
+		opacity    : 1;
+		left       : 0;
+		background : rgba(35, 35, 35, 0.4);
+		transition : .2s visibility, .2s opacity;
+	}
+
+	.gs-resize-handle-both {
+		bottom : 0;
+		right  : 0;
+	}
